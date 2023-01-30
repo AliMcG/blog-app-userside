@@ -17,13 +17,19 @@ function Home({ posts }: { posts: BlogPostProps[] }) {
   return (
     <div className="m-auto my-10 flex flex-col items-center">
       {posts.map((post, index: number) => (
-        <div className="flex even:flex-row odd:flex-row-reverse w-3/5 h-96 border mt-10 bg-[#F2F7FF] justify-between odd:justify-end p-4 rounded" key={index}>
+        <div className="flex relative lg:even:flex-row lg:odd:flex-row-reverse flex-col sm:items-center w-3/5 h-96 border mt-10 bg-[#F2F7FF] lg:justify-between lg:odd:justify-end p-4 rounded" key={index}>
           
             <div className="text-gray-700 p-4 text-base ">
               <h2 className="font-bold mb-4 text-xl">{post.title.toUpperCase()}</h2>
               <Markup content={`${post.description.substring(0, 100)}...`} />
+            </div >
+            <div className="w-3/5 h-80 relative ">
+            <Image src={post.image} alt="Blog image" sizes="320 640 750"
+    fill />
             </div>
-            <Image src={post.image} alt="Blog image" width="475" height="100" />
+          
+           
+            
           
         </div>
       ))}
