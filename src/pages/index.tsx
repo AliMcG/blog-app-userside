@@ -35,6 +35,7 @@ function Home( posts: BlogPostProps[] ) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const response = await fetch(process.env.BACKEND_URL as string);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const posts: BlogPostProps[] = await response.json();
 
   return {
