@@ -12,7 +12,7 @@ type BlogPostProps = {
   image: string;
 };
 
-function Home({ posts }: { posts: BlogPostProps[] }) {
+function Home( posts: BlogPostProps[] ) {
   // console.log("posts inside home", posts)
   return (
     <div className="m-auto my-10 flex flex-col items-center">
