@@ -34,7 +34,7 @@ function Home( posts: BlogPostProps[] ) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await fetch(process.env.BACKEND_URL);
+  const response = await fetch(process.env.BACKEND_URL as string);
   const posts: BlogPostProps[] = await response.json();
 
   return {
