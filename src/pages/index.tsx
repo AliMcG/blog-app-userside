@@ -1,7 +1,4 @@
-// import { type NextPage } from "next";
 import { type GetServerSideProps } from "next";
-// import BlogDisplay from "../components/BlogDisplay";
-// import Link from "next/link";
 import Image from "next/image";
 import { Markup } from "interweave";
 
