@@ -37,7 +37,7 @@ export async function http<T>(
   request: RequestInfo
 ): Promise<T> {
   const response = await fetch(request);
-  const body = await response.json();
+  const body = await response.json() as T
   return body;
 }
 
