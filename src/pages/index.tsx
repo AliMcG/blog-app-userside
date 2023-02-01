@@ -33,13 +33,23 @@ function Home( {posts}: {posts: BlogPostProps[]} ) {
   );
 }
 
+export async function http<T>(
+  request: RequestInfo
+): Promise<T> {
+  const response = await fetch(request);
+  const body = await response.json();
+  return body;
+}
+
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await fetch(process.env.BACKEND_URL as string);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const posts: BlogPostProps[] = await response.json();
+
+  const data = await http<BlogPostProps[]>(process.env.BACKEND_URL as string)
+  // const response = await fetch(process.env.BACKEND_URL as string);
+ 
+  // const posts: BlogPostProps[] = await response.json();
 
   return {
-    props: { posts: posts },
+    props: { posts: data },
   };
 };
 
