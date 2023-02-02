@@ -2,6 +2,7 @@ import { type GetServerSideProps } from "next";
 import Image from "next/image";
 import { Markup } from "interweave";
 
+// Defines the type for the blog posts used in this app
 type BlogPostProps = {
   _id: string;
   title: string;
@@ -10,12 +11,11 @@ type BlogPostProps = {
 };
 
 function Home( {posts}: {posts: BlogPostProps[]} ) {
-  // console.log("posts inside home", posts)
   return (
     <div className="m-auto my-10 flex flex-col items-center">
       {posts.map((post, index: number) => (
         <div
-          className="mt-10 flex h-4/5 md:w-3/5 mx-4 flex-col-reverse lg:items-start items-center rounded border bg-[#F2F7FF] p-4 lg:odd:flex-row-reverse  lg:even:flex-row lg:odd:justify-end"
+          className="mt-10 flex h-4/5 md:w-3/5 mx-4 flex-col-reverse lg:items-start items-center rounded border bg-custom-blue p-4 lg:odd:flex-row-reverse  lg:even:flex-row lg:odd:justify-end"
           key={index}
         >
           <div className="p-4 text-base text-gray-700 font-sans">
@@ -33,6 +33,7 @@ function Home( {posts}: {posts: BlogPostProps[]} ) {
   );
 }
 
+// A type safe funstion to fetch data
 export async function http<T>(
   request: RequestInfo
 ): Promise<T> {
@@ -41,8 +42,8 @@ export async function http<T>(
   return body;
 }
 
+// Type safe GetServerSideProps
 export const getServerSideProps: GetServerSideProps = async () => {
-
   const data = await http<BlogPostProps[]>(process.env.BACKEND_URL as string)
   return {
     props: { posts: data },

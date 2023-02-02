@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Create the root custom css colour
+This can then be added to tailwind.config.cjs
+with a variable name to consume throughout the code. */
+
+@layer base {
+  :root {
+    --color-custom-blue: #F2F7FF
+  }
+}

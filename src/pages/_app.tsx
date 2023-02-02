@@ -2,9 +2,10 @@ import { type AppType } from "next/dist/shared/lib/utils";
 import { Montserrat, Frank_Ruhl_Libre } from "@next/font/google";
 import "../styles/globals.css";
 import { polyfill } from "interweave-ssr";
-
+//  Polyfill function here to manage a hydration error caused by <Markup> component 
 polyfill();
 
+// To import and add custom fonts to next.js
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: '--font-monts',
