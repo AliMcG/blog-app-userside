@@ -15,7 +15,7 @@ function Home( {posts}: {posts: BlogPostProps[]} ) {
     <div className="m-auto my-10 flex flex-col items-center">
       {posts.map((post, index: number) => (
         <div
-          className="mt-10 flex h-4/5 w-3/5 flex-col-reverse lg:items-start items-center rounded border bg-[#F2F7FF] p-4 lg:odd:flex-row-reverse  lg:even:flex-row lg:odd:justify-end"
+          className="mt-10 flex h-4/5 md:w-3/5 mx-4 flex-col-reverse lg:items-start items-center rounded border bg-[#F2F7FF] p-4 lg:odd:flex-row-reverse  lg:even:flex-row lg:odd:justify-end"
           key={index}
         >
           <div className="p-4 text-base text-gray-700 ">
@@ -24,7 +24,7 @@ function Home( {posts}: {posts: BlogPostProps[]} ) {
             </h2>
             <Markup content={`${post.description.substring(0, 100)}...`} />
           </div>
-          <div className="relative h-80 lg:w-3/5 w-4/5">
+          <div className="relative h-80 lg:w-3/5 w-11/12">
             <Image src={post.image} alt="Blog image" sizes="" fill className="rounded"/>
           </div>
         </div>
@@ -44,10 +44,6 @@ export async function http<T>(
 export const getServerSideProps: GetServerSideProps = async () => {
 
   const data = await http<BlogPostProps[]>(process.env.BACKEND_URL as string)
-  // const response = await fetch(process.env.BACKEND_URL as string);
- 
-  // const posts: BlogPostProps[] = await response.json();
-
   return {
     props: { posts: data },
   };
