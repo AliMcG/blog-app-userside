@@ -18,8 +18,8 @@ function Home( {posts}: {posts: BlogPostProps[]} ) {
           className="mt-10 flex h-4/5 md:w-3/5 mx-4 flex-col-reverse lg:items-start items-center rounded border bg-[#F2F7FF] p-4 lg:odd:flex-row-reverse  lg:even:flex-row lg:odd:justify-end"
           key={index}
         >
-          <div className="p-4 text-base text-gray-700 ">
-            <h2 className="mb-4 text-xl font-bold">
+          <div className="p-4 text-base text-gray-700 font-sans">
+            <h2 className="mb-4 text-xl font-bold font-mono">
               {post.title.toUpperCase()}
             </h2>
             <Markup content={`${post.description.substring(0, 100)}...`} />
