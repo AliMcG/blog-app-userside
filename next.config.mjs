@@ -26,7 +26,8 @@ const config = {
   },
   webpack(config) {
     config.module.rules.push({
-      test: /\.svg$/,
+      test: /\.svg$/i,
+      issuer: { and: [/\.(js|ts|md)x?$/] },
       use: ["@svgr/webpack"]
     });
 

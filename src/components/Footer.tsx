@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import linkedIn from "../../public/linkedin-custom.svg";
 import subStack from "../../public/substack-custom.svg";
 import twitter from "../../public/twitter-custom.svg";
@@ -20,12 +21,12 @@ function Footer() {
         </Link>
         <Link href="https://harryduncton.substack.com" target="_blank" rel="noopener noreferrer">
           
-            <Image src={subStack} width="40" height="40" alt="LinkedIn-logo" />
+            <Image src={subStack} width="40" height="40" alt="Substack-logo" />
           
         </Link>
         <Link href="https://twitter.com/lethalsturgeon" target="_blank" rel="noopener noreferrer">
           
-            <Image src={twitter} width="40" height="40" alt="LinkedIn-logo" />
+            <Image src={twitter} width="40" height="40" alt="Twitter-logo" />
           
         </Link>
       </article>
