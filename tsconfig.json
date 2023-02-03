@@ -17,6 +17,5 @@
     "noUncheckedIndexedAccess": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
-  "exclude": ["node_modules"],
-  "files": ["src/@types/assets/globals.d.ts"]
+  "exclude": ["node_modules"]
 }
