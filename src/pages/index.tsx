@@ -1,6 +1,7 @@
 import { type GetServerSideProps } from "next";
 import Image from "next/image";
 import { Markup } from "interweave";
+import Footer from "../components/Footer";
 
 // Defines the type for the blog posts used in this app
 type BlogPostProps = {
@@ -29,6 +30,7 @@ function Home( {posts}: {posts: BlogPostProps[]} ) {
           </div>
         </div>
       ))}
+      <Footer />
     </div>
   );
 }

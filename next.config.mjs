@@ -14,6 +14,7 @@ const config = {
     defaultLocale: "en",
   },
   images: {
+    // this recognises the web address for the hosted images
     remotePatterns: [
       {
         protocol: 'https',
