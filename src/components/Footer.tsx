@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import linkedIn from "../../public/linkedin-custom.svg";
-import subStack from "../../public/substack-custom.svg";
-import twitter from "../../public/twitter-custom.svg";
+import LinkedIn from "../../public/linkedin-custom.svg";
+import SubStack from "../../public/substack-custom.svg";
+import Twitter from "../../public/twitter-custom.svg";
 
 
 function Footer() {
@@ -16,17 +16,20 @@ function Footer() {
           {/* to open link in a new tab use target="_blank" 
       and as a security measure use rel="noopener noreferrer" to stop malicious reopening of the tab */}
           
-            <Image src={linkedIn} width="40" height="40" alt="LinkedIn-logo" />
+            {/* <Image src={linkedIn} width="40" height="40" alt="LinkedIn-logo" /> */}
+            <LinkedIn />
           
         </Link>
         <Link href="https://harryduncton.substack.com" target="_blank" rel="noopener noreferrer">
           
-            <Image src={subStack} width="40" height="40" alt="Substack-logo" />
+            {/* <Image src={subStack} width="40" height="40" alt="Substack-logo" /> */}
+            <SubStack />
           
         </Link>
         <Link href="https://twitter.com/lethalsturgeon" target="_blank" rel="noopener noreferrer">
           
-            <Image src={twitter} width="40" height="40" alt="Twitter-logo" />
+            {/* <Image src={twitter} width="40" height="40" alt="Twitter-logo" /> */}
+            <Twitter />
           
         </Link>
       </article>
@@ -35,7 +38,7 @@ function Footer() {
         <p>© {year} Harry Duncton</p>
       </footer>
     </div>
-  );
+  )
 }
 
 export default Footer;
