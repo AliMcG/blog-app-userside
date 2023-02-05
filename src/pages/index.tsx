@@ -32,7 +32,7 @@ function Home( {posts}: {posts: BlogPostProps[]} ) {
       ))}
       <Footer />
     </div>
-  );
+  )
 }
 
 // A type safe funstion to fetch data
