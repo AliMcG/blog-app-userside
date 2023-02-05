@@ -1,6 +1,7 @@
 import { type GetServerSideProps } from "next";
 import Image from "next/image";
 import { Markup } from "interweave";
+import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 // Defines the type for the blog posts used in this app
@@ -14,6 +15,7 @@ type BlogPostProps = {
 function Home( {posts}: {posts: BlogPostProps[]} ) {
   return (
     <div className="m-auto my-10 flex flex-col items-center">
+      <Navbar />
       {posts.map((post, index: number) => (
         <div
           className="mt-10 flex h-4/5 md:w-3/5 mx-4 flex-col-reverse lg:items-start items-center rounded border bg-custom-blue p-4 lg:odd:flex-row-reverse  lg:even:flex-row lg:odd:justify-end"

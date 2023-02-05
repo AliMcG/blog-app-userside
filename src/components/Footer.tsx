@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-
 import LinkedIn from "../../public/linkedin-custom.svg";
 import SubStack from "../../public/substack-custom.svg";
 import Twitter from "../../public/twitter-custom.svg";
