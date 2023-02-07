@@ -1,9 +1,7 @@
 import { type GetServerSideProps } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Markup } from "interweave";
-// import Navbar from "../components/NavBar";
-// import Footer from "../components/Footer";
+
 
 // Defines the type for the blog posts used in this app
 type BlogPostProps = {
@@ -13,29 +11,26 @@ type BlogPostProps = {
   image: string;
 };
 
-function Home( {posts}: {posts: BlogPostProps[]} ) {
+function PostDetails( {post}: {post: BlogPostProps} ) {
+  console.log("a post", post)
   return (
     <div className="m-auto my-10 flex flex-col items-center">
-      {/* <Navbar /> */}
-      {posts.map((post, index: number) => (
+    
         <div
           className="mt-10 flex h-4/5 md:w-3/5 mx-4 flex-col-reverse lg:items-start items-center rounded border bg-custom-blue p-4 lg:odd:flex-row-reverse  lg:even:flex-row lg:odd:justify-end"
-          key={index}
+         
         >
-          <Link href={`/${post._id}`}>
-          </Link>
           <div className="p-4 text-base text-gray-700 font-sans">
             <h2 className="mb-4 text-xl font-bold font-mono">
               {post.title.toUpperCase()}
             </h2>
-            <Markup content={`${post.description.substring(0, 100)}...`} />
+            <Markup content={post.description} />
           </div>
           <div className="relative h-80 lg:w-3/5 w-11/12">
             <Image src={post.image} alt="Blog image" sizes="" fill className="rounded"/>
           </div>
         </div>
-      ))}
-      {/* <Footer /> */}
+     
     </div>
   )
 }
@@ -49,12 +44,15 @@ export async function http<T>(
   return body;
 }
 
+
 // Type safe GetServerSideProps
-export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await http<BlogPostProps[]>(process.env.BACKEND_URL as string)
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const id = context.params?.id as string
+  const url = process.env.BACKEND_URL as string
+  const data = await http<BlogPostProps[]>(`${url}/${id}`)
   return {
-    props: { posts: data },
+    props: { post: data },
   };
 };
 
-export default Home;
+export default PostDetails;
