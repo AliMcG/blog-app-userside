@@ -1,7 +1,9 @@
 import { type GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Markup } from "interweave";
+import { Markup, Interweave  } from "interweave";
+
+
 
 // Defines the type for the blog posts used in this app
 type BlogPostProps = {
@@ -25,6 +27,8 @@ function Home({ posts }: { posts: BlogPostProps[] }) {
                 {post.title.toUpperCase()}
               </h2>
               <Markup content={`${post.description.substring(0, 100)}...`} />
+              {/* <Interweave content={`${post.description.substring(0, 100)}...`} /> */}
+          
             </div>
           </Link>
           <div className="relative h-80 w-11/12 lg:w-3/5">

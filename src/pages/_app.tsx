@@ -19,11 +19,11 @@ const frank = Frank_Ruhl_Libre({
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <main className={`${montserrat.variable} ${frank.variable} `}>
+    <main className={`${montserrat.variable} ${frank.variable} `}>
+      <Layout>
         <Component {...pageProps} />
-      </main>
-    </Layout>
+      </Layout>
+    </main>
   );
 };
 

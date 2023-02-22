@@ -10,4 +10,13 @@ with a variable name to consume throughout the code. */
   :root {
     --color-custom-blue: #F2F7FF
   }
+  h1 {
+    @apply text-2xl font-bold my-2;
+  }
+  h2 {
+    @apply text-xl font-bold my-2;
+  }
+  h3 {
+    @apply text-lg font-bold my-2;
+  }
 }

@@ -11,23 +11,25 @@ type BlogPostProps = {
 };
 
 function PostDetails({ post }: { post: BlogPostProps }) {
-  console.log("a post", post);
+  
   return (
     <div className="m-auto my-10 flex flex-col items-center">
       <div className="mx-4 mt-10 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 ">
-        <div className="p-4 font-sans text-base text-gray-700">
-          <h2 className="mb-4 font-mono text-xl font-bold">
+        <div className="p-4 font-sans text-gray-700">
+          <h2 className="mb-4 font-sans text-xl font-bold text-[#052962]">
             {post.title.toUpperCase()}
           </h2>
-          <Markup content={post.description} />
+          <Markup className="text-base text-slate-800 font-sans" content={post.description} />
         </div>
-        <div className="relative h-80  w-11/12">
+        <div className="">
           <Image
             src={post.image}
             alt="Blog image"
-            sizes=""
-            fill
-            className="rounded"
+            // sizes=""
+            // fill
+            // className="rounded"
+            width="375"
+            height="275"
           />
         </div>
       </div>
