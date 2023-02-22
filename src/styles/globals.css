@@ -10,6 +10,9 @@ with a variable name to consume throughout the code. */
   :root {
     --color-custom-blue: #F2F7FF
   }
+  /* to override the "PreFlight in tailwindCSS
+  this allows the h1 tags to have some styling in the 
+  rich text area */
   h1 {
     @apply text-2xl font-bold my-2;
   }
