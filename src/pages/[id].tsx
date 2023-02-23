@@ -2,7 +2,6 @@ import { type GetServerSideProps } from "next";
 import Image from "next/image";
 import { Markup } from "interweave";
 
-// Defines the type for the blog posts used in this app
 type BlogPostProps = {
   _id: string;
   title: string;
@@ -25,9 +24,6 @@ function PostDetails({ post }: { post: BlogPostProps }) {
           <Image
             src={post.image}
             alt="Blog image"
-            // sizes=""
-            // fill
-            // className="rounded"
             width="375"
             height="275"
           />
