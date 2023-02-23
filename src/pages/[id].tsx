@@ -13,8 +13,8 @@ type BlogPostProps = {
 function PostDetails({ post }: { post: BlogPostProps }) {
   
   return (
-    <div className="m-auto my-10 flex flex-col items-center">
-      <div className="mx-4 mt-10 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 ">
+    <div className="m-auto flex flex-col items-center">
+      <div className="mx-4 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 ">
         <div className="p-4 font-sans text-gray-700">
           <h2 className="mb-4 font-sans text-xl font-bold text-[#052962]">
             {post.title.toUpperCase()}

@@ -18,7 +18,7 @@ function Home({ posts }: { posts: BlogPostProps[] }) {
     <div className="m-auto my-10 flex flex-col items-center">
       {posts.map((post, index: number) => (
         <div
-          className="mx-4 mt-10 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 lg:items-start lg:odd:flex-row-reverse  lg:odd:justify-end lg:even:flex-row"
+          className="mx-4 mb-4 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 lg:items-start lg:odd:flex-row-reverse  lg:odd:justify-end lg:even:flex-row"
           key={index}
         >
           <Link href={`/${post._id}`}>
