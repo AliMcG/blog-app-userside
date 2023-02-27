@@ -16,12 +16,12 @@ function Home({ posts }: { posts: BlogPostProps[] }) {
     <div className="m-auto my-10 flex flex-col items-center">
       {posts.map((post, index: number) => (
         <div
-          className="mx-4 mb-4 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 lg:items-start lg:odd:flex-row-reverse  lg:odd:justify-end lg:even:flex-row"
+          className="mx-4 mb-4 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 lg:items-start lg:odd:flex-row-reverse  lg:odd:justify-end lg:even:flex-row hover:border-[#CFE1FF]"
           key={index}
         >
           <Link href={`/${post._id}`}>
-            <div className="p-4 font-sans text-base text-gray-700 hover:text-[#067A75]">
-              <h2 className="mb-4 font-mono text-xl font-bold hover:text-[#067A75]">
+            <div className="p-4 font-sans text-base text-gray-700 hover:text-[#067A75] ">
+              <h2 className="mb-4 font-mono text-2xl font-bold hover:text-[#067A75]">
                 {post.title.toUpperCase()}
               </h2>
               <Markup content={`${post.description.substring(0, 100)}...`} />

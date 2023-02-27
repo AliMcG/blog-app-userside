@@ -15,7 +15,7 @@ function PostDetails({ post }: { post: BlogPostProps }) {
     <div className="m-auto flex flex-col items-center">
       <div className="mx-4 flex h-4/5 flex-col-reverse items-center rounded border bg-custom-blue p-4 md:w-3/5 ">
         <div className="p-4 font-sans text-gray-700">
-          <h2 className="mb-4 font-sans text-xl font-bold text-[#052962]">
+          <h2 className="mb-4 font-mono text-2xl font-bold text-[#052962]">
             {post.title.toUpperCase()}
           </h2>
           <Markup className="text-base text-slate-800 font-sans" content={post.description} />
